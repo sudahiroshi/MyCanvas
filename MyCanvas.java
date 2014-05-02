@@ -1,20 +1,20 @@
- 1: import java.awt.*;
- 2:
- 3: public class MyCanvas extends Canvas{
- 4: 	public int x[] = new int[200], y[] = new int[200], num = 0;
- 5:
- 6: 	@Override public void paint( Graphics g ) {
- 7: 		for( int i=0; i<num; i++ ) {
- 8: 			g.setColor( new Color( 0, 0, 0 ) );
- 9: 			g.fillOval( x[i], y[i], 5, 5 );
-10: 		}
-11: 	}
-12:
-13: 	public void setPoint( int x, int y ){
-14: 		this.x[ num ] = x;
-15: 		this.y[ num ] = y;
-16: 		num++;
-17: 		if( num >= 200 )	num = 0;
-18: 		repaint();
-19: 	}
-20: }
+import java.awt.*;
+
+public class MyCanvas extends Canvas{
+	public int x[] = new int[200], y[] = new int[200], num = 0;
+
+	@Override public void paint( Graphics g ) {
+		for( int i=0; i<num; i++ ) {
+			g.setColor( new Color( 0, 0, 0 ) );
+			g.fillOval( x[i], y[i], 5, 5 );
+		}
+	}
+
+	public void setPoint( int x, int y ){
+		this.x[ num ] = x;
+		this.y[ num ] = y;
+		num++;
+		if( num >= 200 )	num = 0;
+		repaint();
+	}
+}
